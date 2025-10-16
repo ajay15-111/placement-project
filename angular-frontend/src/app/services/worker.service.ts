@@ -3,12 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Worker } from '../models/worker';
+import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkerService {
 
+    private apiUrl = environment.apiUrl; 
   private getUrl: string = "http://localhost:8080/api/v1/workers";
 
   constructor(private _httpClient: HttpClient) { }
